@@ -25,6 +25,7 @@ import {AutocompleteNode} from './AutocompleteNode';
 import {EmojiNode} from './EmojiNode';
 import {EquationNode} from './EquationNode';
 import {ExcalidrawNode} from './ExcalidrawNode';
+import {ExtendedTableNode} from './ExtendedTableNode';
 import {FigmaNode} from './FigmaNode';
 import {ImageNode} from './ImageNode';
 import {InlineImageNode} from './InlineImageNode/InlineImageNode';
@@ -44,7 +45,14 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   ListItemNode,
   QuoteNode,
   CodeNode,
-  TableNode,
+  // TableNode,
+  ExtendedTableNode,
+  {
+    replace: TableNode,
+    with: (node: TableNode) => {
+      return new ExtendedTableNode();
+    },
+  },
   TableCellNode,
   TableRowNode,
   HashtagNode,
