@@ -52,6 +52,7 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
     with: (node: TableNode) => {
       return new ExtendedTableNode();
     },
+    withKlass: ExtendedTableNode,
   },
   TableCellNode,
   TableRowNode,
